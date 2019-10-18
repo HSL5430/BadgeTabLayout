@@ -10,7 +10,7 @@ BadgeTabLayout
 [点我下载安装](app-debug.apk)
 
 ## 效果
-<img src="demo.gif" width="100%">
+<img src="demo.gif" width="30%">  
 
 ## 用法
 跟RadioGroup的用法几乎一致，具体看查demo（app module）
