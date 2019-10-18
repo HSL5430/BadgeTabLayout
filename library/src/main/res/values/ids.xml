@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- BadgeTabLayout -->
+    <item name="BadgeTabLayout_icon" type="id" />
+    <item name="BadgeTabLayout_text" type="id" />
+    <item name="BadgeTabLayout_badge" type="id" />
+
+</resources>

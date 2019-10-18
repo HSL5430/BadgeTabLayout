@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="BadgeTabView_Badge">
+        <item name="badge_background">@drawable/shape_bg_badge</item>
+        <item name="badge_minWH">5dp</item>
+        <item name="badge_minWH_withText">16dp</item>
+        <item name="badge_textColor">@android:color/white</item>
+        <item name="badge_textSize">11dp</item>
+        <item name="badge_marginLeft">-5dp</item>
+    </style>
+
+    <style name="BadgeTabView" parent="BadgeTabView_Badge">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="src_marginTop">5dp</item>
+        <!--textColor不提供默认的，还是由上层去定义吧-->
+        <!--<item name="textColor">@color/selector_color_home_tab</item>-->
+        <item name="textSize">10dp</item>
+        <item name="text_marginBottom">5dp</item>
+        <item name="text_marginTop">2dp</item>
+    </style>
+
+</resources>

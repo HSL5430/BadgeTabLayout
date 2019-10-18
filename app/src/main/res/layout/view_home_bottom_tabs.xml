@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mutou.badgetab.BadgeTabLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tabLayout"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@android:color/white"
+    android:orientation="horizontal"
+    app:checkedTab="@id/homeTabView">
+
+    <com.mutou.badgetab.BadgeTabView
+        android:id="@+id/homeTabView"
+        style="@style/BadgeTabView.Home"
+        app:badge_visible="true"
+        app:src="@drawable/selector_ic_home"
+        app:text="@string/title_home" />
+
+    <com.mutou.badgetab.BadgeTabView
+        android:id="@+id/dashboardTabView"
+        style="@style/BadgeTabView.Home"
+        app:badge_text="福利"
+        app:badge_visible="true"
+        app:src="@drawable/selector_ic_dashboard"
+        app:text="@string/title_dashboard" />
+
+    <com.mutou.badgetab.BadgeTabView
+        android:id="@+id/notificationsTabView"
+        style="@style/BadgeTabView.Home"
+        app:badge_text="99"
+        app:badge_visible="true"
+        app:src="@drawable/selector_ic_notifications"
+        app:text="@string/title_notifications" />
+
+</com.mutou.badgetab.BadgeTabLayout>

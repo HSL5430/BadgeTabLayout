@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+def getExtProperty(prop, defaultValue) {
+    return rootProject.ext.has(prop) ? rootProject.ext.get(prop) : defaultValue
+}
+
+android {
+
+    compileSdkVersion getExtProperty('compileSdkVersion', 29)
+    buildToolsVersion getExtProperty('buildToolsVersion', '29.0.0')
+
+    defaultConfig {
+        minSdkVersion getExtProperty('minSdkVersion', 14)
+        targetSdkVersion getExtProperty('targetSdkVersion', 29)
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    // 这个是解决lint报错的代码
+    lintOptions {
+        // 即使有报错也不会停止打包了
+        abortOnError false
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+        disable 'MissingTranslation'
+        disable 'ExtraTranslation'
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+}
