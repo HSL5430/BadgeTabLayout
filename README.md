@@ -1,6 +1,8 @@
 BadgeTabLayout
 ======================
 
+[ ![Blog](https://img.shields.io/badge/Blog-%40hsl5430-red.svg)](https://juejin.im/user/57306943df0eea006326b435) [ ![Download](https://api.bintray.com/packages/hsl5430/maven/BadgeTabLayout/images/download.svg) ](https://bintray.com/hsl5430/maven/BadgeTabLayout/_latestVersion) [ ![License](https://img.shields.io/badge/License-Apache--2.0-brightgreen.svg) ](LICENSE)
+
 支持小红点/未读数/文本Badge的tab，类似于**RadioGroup**+**RadioButton**，适用于首页的底部多tab导航。
 
 ## 由来
@@ -15,6 +17,17 @@ BadgeTabLayout
 ## 用法
 跟RadioGroup的用法几乎一致，具体看查demo（app module）
 
+### Gradle
+```guava
+repositories {
+  jcenter()
+}
+
+dependencies {
+  implementation 'com.mutou:BadgeTabLayout:1.0.0'
+}
+```
+
 ### 设置监听器
 ```java
 BadgeTabLayout tabLayout = findViewById(R.id.tabLayout);
@@ -24,11 +37,9 @@ tabLayout.setOnCheckedChangeListener(new BadgeTabLayout.OnCheckedChangeListener(
         ...
     }
 });
-
 ```
 
 ### 布局文件
-
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <com.mutou.badgetab.BadgeTabLayout xmlns:android="http://schemas.android.com/apk/res/android"

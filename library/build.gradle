@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 def getExtProperty(prop, defaultValue) {
     return rootProject.ext.has(prop) ? rootProject.ext.get(prop) : defaultValue
@@ -27,6 +28,28 @@ android {
         // 防止在发布的时候出现因MissingTranslation导致Build Failed!
         disable 'MissingTranslation'
         disable 'ExtraTranslation'
+    }
+}
+
+Properties properties = new Properties()
+properties.load(rootProject.file('local.properties').newDataInputStream())
+def bintrayUserValue = properties.getProperty('bintrayUser')
+def bintrayKeyValue = properties.getProperty('bintrayKey')
+
+publish {
+    userOrg = 'hsl5430' // bintray注册的用户名
+    groupId = 'com.mutou'
+    artifactId = 'BadgeTabLayout' // bintray创建的package
+    publishVersion = '1.0.0'
+    desc = 'Similar to Radiogroup + RadioButton'
+    website = 'https://github.com/hsl5430/BadgeTabLayout'
+
+    if (bintrayUserValue != null) {
+        bintrayUser = bintrayUserValue
+    }
+    if (bintrayKeyValue != null) {
+        bintrayKey = bintrayKeyValue
+        dryRun = false
     }
 }
 
