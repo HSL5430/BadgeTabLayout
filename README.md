@@ -6,7 +6,7 @@ BadgeTabLayout
 支持小红点/未读数/文本Badge的tab，类似于**RadioGroup**+**RadioButton**，适用于首页的底部多tab导航。
 
 ## 由来
-项目前期使用的是**RadioGroup**+**RadioButton**，但是碰到要加小红点/未读消息数这样的需求，做法是直接在上面盖一个View，位置调整好就行，但是我觉得这样不太优雅。所以，我copy了RadioGroup、RadioButton的源码进行了重构，支持图标+文字+角标
+项目前期使用的是**RadioGroup**+**RadioButton**，但是碰到要加小红点/未读消息数这样的需求，做法是直接在上面盖一个View，位置调整好就行，但是我觉得这样不太优雅。所以，我copy了RadioGroup、RadioButton的源码进行了重构，支持图片+文字+角标
 
 ## 安装包
 [点我下载安装](app-debug.apk)
