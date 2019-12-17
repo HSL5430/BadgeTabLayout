@@ -33,6 +33,8 @@ import android.widget.TextView;
  */
 public class BadgeTabView extends RelativeLayout {
 
+    private boolean mCheckedOnClick = true;
+
     private boolean mBroadcasting;
 
     private OnCheckedChangeListener mOnCheckedChangeListener;
@@ -169,6 +171,7 @@ public class BadgeTabView extends RelativeLayout {
         // 初始化选中状态
         boolean checked = ta.getBoolean(R.styleable.BadgeTabView_checked, false);
         setChecked(checked);
+        mCheckedOnClick = ta.getBoolean(R.styleable.BadgeTabView_checkedOnClick, mCheckedOnClick);
 
         // 初始化 badge, 如果有的话
         boolean badgeVisible = ta.getBoolean(R.styleable.BadgeTabView_badge_visible, false);
@@ -204,15 +207,29 @@ public class BadgeTabView extends RelativeLayout {
     @Override
     public boolean performClick() {
         final boolean handled = super.performClick();
-        if (!handled) { // 没有click事件才处理check事件
-            if (!isChecked()) {
-                setChecked(true);
-            }
+        if (!handled) {
             // View only makes a sound effect if the onClickListener was
             // called, so we'll need to make one here instead.
             playSoundEffect(SoundEffectConstants.CLICK);
         }
+        if (mCheckedOnClick && !isChecked()) {
+            setChecked(true);
+        }
         return handled;
+    }
+
+    /**
+     * 当点击的时候，是否允许选中, 默认true
+     */
+    public boolean isCheckedOnClick() {
+        return mCheckedOnClick;
+    }
+
+    /**
+     * 设置当点击的时候，是否允许选中
+     */
+    public void setCheckedOnClick(boolean enabled) {
+        mCheckedOnClick = enabled;
     }
 
     /**

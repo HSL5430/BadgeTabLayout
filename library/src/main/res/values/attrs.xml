@@ -10,6 +10,7 @@
     <!-- BadgeTabView-->
     <declare-styleable name="BadgeTabView">
         <attr name="checked" format="boolean" />
+        <attr name="checkedOnClick" format="boolean" />
         <attr name="src" format="reference|color" />
         <attr name="src_margin" format="dimension" />
         <attr name="src_marginLeft" format="dimension" />
