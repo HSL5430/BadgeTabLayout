@@ -1,0 +1,41 @@
+/**
+ * 获取的是gradle.properties中的propVersionName属性
+ * @return 版本名称
+ */
+def versionName() {
+    return propVersionName
+}
+
+/**
+ * 通过版本名称生成版本号，版本升级的时候，那只需要修改版本名称，不需要修改版本号<br/>
+ * <p>
+ * eg: <br/>
+ * versionName: 1.0.0
+ * versionCode: 1000000
+ * <p>
+ * 说明：<br/>
+ * 大版本位数不限（因为在最左边）、中版本2位数（不足补0）、小版本3位数（不足补0)br/>
+ * 最后预留多一位
+ *
+ * @return 版本号
+ */
+def versionCode() {
+    def verName = versionName()
+    def verStrs = verName.split("\\.")
+    def size = verStrs.size() // 3
+
+    int verCode = Integer.parseInt(verStrs[size - 1]) * 10
+    for (int i = 0; i < size - 1; i++) {
+        verCode += Integer.parseInt(verStrs[i]) * Math.pow(10, ((size - i) * 2))
+    }
+    return verCode
+}
+
+ext {
+    verison = {}
+    verison.name = { versionName() }
+    verison.code = { versionCode() }
+}
+
+
+

@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
+apply from: "$rootDir/version.gradle"
 
 def getExtProperty(prop, defaultValue) {
     return rootProject.ext.has(prop) ? rootProject.ext.get(prop) : defaultValue
@@ -11,6 +12,10 @@ android {
     buildToolsVersion getExtProperty('buildToolsVersion', '29.0.0')
 
     defaultConfig {
+
+        versionCode verison.code()
+        versionName verison.name()
+
         minSdkVersion getExtProperty('minSdkVersion', 14)
         targetSdkVersion getExtProperty('targetSdkVersion', 29)
     }
@@ -40,7 +45,7 @@ publish {
     userOrg = 'hsl5430' // bintray注册的用户名
     groupId = 'com.mutou'
     artifactId = 'BadgeTabLayout' // bintray创建的package
-    publishVersion = '1.0.0'
+    publishVersion = verison.name()
     desc = 'Similar to Radiogroup + RadioButton'
     website = 'https://github.com/hsl5430/BadgeTabLayout'
 

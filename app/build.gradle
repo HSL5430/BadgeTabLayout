@@ -1,14 +1,19 @@
 apply plugin: 'com.android.application'
+apply from: "$rootDir/version.gradle"
 
 android {
+
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
+
     defaultConfig {
+
+        versionCode verison.code()
+        versionName verison.name()
+
         applicationId "com.mutou.badgetab.demo"
         minSdkVersion 14
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

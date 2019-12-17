@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'com.mutou:BadgeTabLayout:1.0.0'
+  implementation 'com.mutou:BadgeTabLayout:1.0.1'
 }
 ```
 
@@ -120,3 +120,11 @@ demo中提供了一个APP特例的style
 
 style不适用项目的话可以不用，自己写一个。
 
+## 更新日志
+
+### [2019-12-17] v1.0.1
+- 新增属性checkedOnClick:当点击的时候，是否允许选中, 默认true
+- 新增version.gradle管理版本号
+
+### [2019-10-19] v1.0.0
+- 支持小红点/未读数/文本Badge的tab，类似于RadioGroup+RadioButton
